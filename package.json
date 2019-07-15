@@ -1,0 +1,21 @@
+{
+  "name": "fundacion",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaotzin68/vr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yaotzin68/vr/issues"
+  },
+  "homepage": "https://github.com/yaotzin68/vr#readme",
+  "dependencies": {
+    "aframe-gif-component": "^0.2.0"
+  }
+}
