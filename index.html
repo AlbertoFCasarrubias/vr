@@ -1,14 +1,26 @@
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
     <script src="https://rawgit.com/mayognaise/aframe-gif-component/master/dist/aframe-gif-component.min.js"></script>
+    <style>
+        #play-button{
+            position: fixed;
+            top: calc(50% - 1em);
+            left: calc(50% - 100px);
+            width: 200px;
+            height: 2em;
+            z-index: 10;
+        }
+    </style>
 </head>
 <body>
-
+<button id="play-button">Begin Your Experience</button>
 <a-scene>
     <a-assets>
-        <video id="campo" autoplay loop="true" src="video1Crop.mp4"> </video>
+        <video id="campo" preload="auto" autoplay="false" loop="true" src="video1Crop.mp4"> </video>
         <img id="ground" src="spinner.gif">
     </a-assets>
 
@@ -21,5 +33,21 @@
     <a-videosphere src="#campo"></a-videosphere>
 
 </a-scene>
+<script>
+
+    // Play button, required by browsers to grab user interaction before autoplaying videos.
+    document.querySelector('#play-button').addEventListener("click", function(e){
+        startStuff();  // launch the first voice over
+        this.style.display = 'none';
+    }, false);
+
+    function startStuff(){
+        var theVideo = document.querySelector('#n1');
+        theVideo.play();
+
+        var theAudio = document.querySelector('#v1');
+        theAudio.components.sound.playSound();
+    }
+</script>
 </body>
 </html>
