@@ -30,7 +30,7 @@
     <!--a-entity geometry="primitive:plane" material="shader:gif;src:url(spinner.gif); opacity: 1; alphaTest: 0.5;" gif="" position="-5 2 0" rotation="0 90 0" scale="2 2 2"></a-entity-->
     <!--a-plane src="#ground" height="20" width="20" position="-5 0 0" rotation="0 90 0"></a-plane-->
 
-    <a-videosphere src="#campo"></a-videosphere>
+    <a-videosphere src="#campo" src="#v1"></a-videosphere>
 
 </a-scene>
 <script>
@@ -42,11 +42,8 @@
     }, false);
 
     function startStuff(){
-        var theVideo = document.querySelector('#n1');
+        var theVideo = document.querySelector('#v1');
         theVideo.play();
-
-        var theAudio = document.querySelector('#v1');
-        theAudio.components.sound.playSound();
     }
 </script>
 </body>
