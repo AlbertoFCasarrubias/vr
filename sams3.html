@@ -8,7 +8,7 @@
 
 <a-scene>
     <a-assets>
-        <video id="campo" crossorigin="anonymous" src="360_5sec.mp4"> </video>
+        <video id="campo" autoplay loop muted playsinline crossorigin="anonymous" src="360_5sec.mp4"> </video>
         <img id="ground" src="spinner.gif">
     </a-assets>
 
@@ -23,10 +23,28 @@
 
 </a-scene>
 <script>
+  /*
   window.addEventListener('click', function () {
     var v = document.querySelector('#campo');
     v.play();
   });
+   */
+
+  var promise = document.querySelector('#campo').play();
+
+  if (promise !== undefined) {
+    promise.catch(error => {
+      // Auto-play was prevented
+      // Show a UI element to let the user manually start playback
+
+      var v = document.querySelector('#campo');
+      v.play();
+
+    }).then(() => {
+      // Auto-play started
+    });
+  }
+
 </script>
 </body>
 </html>
